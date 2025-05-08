@@ -1,0 +1,160 @@
+<div class="scroll-feed">
+  <!-- CARD 1 -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h2>Josh Hader</h2>
+        <p>RRI: <strong>95.1</strong></p>
+        <p>Stuff+: <strong>140</strong></p>
+        <p>CSW%: <strong>39.1%</strong></p>
+        <span class="badge badge-top5">Top 5%</span>
+        <span class="badge badge-elite">Elite</span>
+      </div>
+      <div class="flip-card-back">
+        <img class="player-image" src="https://i.imgur.com/tHnGf2G.png" alt="Josh Hader">
+        <div class="player-info">
+          <h3>Josh Hader</h3>
+          <p>Closer – Padres</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h2>Jhoan Durán</h2>
+        <p>RRI: <strong>89.4</strong></p>
+        <p>Stuff+: <strong>135</strong></p>
+        <p>CSW%: <strong>37.5%</strong></p>
+        <span class="badge badge-elite">Elite</span>
+      </div>
+      <div class="flip-card-back">
+        <img class="player-image" src="https://i.imgur.com/XRIutLC.png" alt="Jhoan Durán">
+        <div class="player-info">
+          <h3>Jhoan Durán</h3>
+          <p>Closer – Twins</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add more cards here -->
+
+</div>
+
+<style>
+/* Scroll Feed Container */
+.scroll-feed {
+  display: flex;
+  overflow-x: auto;
+  gap: 24px;
+  padding: 30px;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-feed::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-feed::-webkit-scrollbar-track {
+  background: #121212;
+}
+.scroll-feed::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+/* Flip Cards (reused) */
+.flip-card {
+  background: transparent;
+  width: 280px;
+  height: 360px;
+  flex: 0 0 auto;
+  perspective: 1000px;
+  scroll-snap-align: start;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  border-radius: 18px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  background-color: #1f1f1f;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front {
+  color: #ffffff;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #f6b003;
+  margin-bottom: 20px;
+}
+
+.player-info h3 {
+  margin: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #f6b003;
+  font-size: 22px;
+}
+
+.player-info p {
+  margin: 6px 0 0;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.badge {
+  display: inline-block;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 4px;
+}
+
+.badge-top5 {
+  border: 2px solid gold;
+  background: #2e2e2e;
+  color: gold;
+}
+
+.badge-elite {
+  background: #00c853;
+  color: #121212;
+}
+</style>
